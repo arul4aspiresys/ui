@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="app-toolbar mat-elevation-z1">
+    <button mat-icon-button (click)="toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="app-name">{{_appName}}</span>
+    <span class="spacer"></span>
+    <button type="button" mat-fab extended *ngIf="!isLoggedIn" routerLink="/login">
+        <mat-icon>login</mat-icon> Login
+    </button>
+    <button type="button" mat-fab extended *ngIf="isLoggedIn" (click)="logout()">
+        <mat-icon>logout</mat-icon> Logout
+    </button>
+</mat-toolbar>

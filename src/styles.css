@@ -2,3 +2,95 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1.app-name {
+    margin-left: 8px !important;
+}
+
+.container-is-mobile .app-toolbar {
+    position: fixed;
+    z-index: 2;
+}
+
+.app-sidenav-container {
+    flex: 1;
+}
+
+.container-is-mobile .app-sidenav-container {
+    flex: 1 0 auto;
+}
+
+.app-sidenav-content {
+    margin: 2rem;
+}
+
+mat-sidenav.app-sidenav {
+    background-color: #f2f2f2;
+    border-right: 1px solid #DBDBDB;
+    width: 250px;
+}
+
+/* mat-sidenav-container.app-sidenav-container {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0;
+} */
+
+/* .mdc-list-item {
+    padding: 8px 0;
+    display: flex;
+    width: auto;
+} */
+
+.mdc-list-item .route-icon {
+    margin-right: 20px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto !important;
+    box-sizing: border-box;
+}
+
+.mdc-list-item__content {
+    flex: 1 1 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+.card {
+    width: 90%;
+}
+.remove-spinner {
+    input[matinput]::-webkit-outer-spin-button,
+    input[matinput]::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+    }
+}
+.card-actions {
+    justify-content: flex-end;
+    gap: 0.7rem;
+}
+.divider {
+    width: 98%;
+    margin: auto !important;
+}
+.m-5rem {
+    margin: 5rem;
+}
+.m-1rem {
+    margin: 1rem;
+}

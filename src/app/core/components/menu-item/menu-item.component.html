@@ -1,0 +1,34 @@
+<div *ngIf="_item.permissions">
+    <div *ngxPermissionsOnly="_item.permissions">
+        <a mat-list-item class="app-menu-list-item" [ngStyle]="{'padding-left': (_depth * 12) + 'px'}"
+            (click)="onItemClick(_item)"
+            [ngClass]="{ 'active': _item.route ? isActiveRoute(_item): false, 'expanded': expanded }">
+            <div class="flex">
+                <mat-icon class="route-icon">{{_item.iconName}}</mat-icon>
+                <span>{{_item.title}}</span>
+                <span *ngIf="_item.children && _item.children.length" class="flex">
+                    <span style="flex: 1 1 0%; box-sizing: border-box;"></span>
+                    <mat-icon [@indicatorRotate]="expanded ? 'expanded' : 'collapsed'">expand_more</mat-icon>
+                </span>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- When item has no permission -->
+<div *ngIf="!_item.permissions">
+    <a mat-list-item class="app-menu-list-item" [ngStyle]="{'padding-left': (_depth * 12) + 'px'}"
+        (click)="onItemClick(_item)"
+        [ngClass]="{ 'active': _item.route ? isActiveRoute(_item): false, 'expanded': expanded }">
+        <div class="flex">
+            <mat-icon class="route-icon">{{_item.iconName}}</mat-icon>
+            <span>{{_item.title}}</span>
+            <span *ngIf="_item.children && _item.children.length" class="flex">
+                <span style="flex: 1 1 0%; box-sizing: border-box;"></span>
+                <mat-icon [@indicatorRotate]="expanded ? 'expanded' : 'collapsed'">expand_more</mat-icon>
+            </span>
+        </div>
+    </a>
+</div>
+<div *ngIf="expanded">
+    <app-menu-item *ngFor="let item of _item.children" [item]="item" [depth]="_depth + 1"></app-menu-item>
+</div>

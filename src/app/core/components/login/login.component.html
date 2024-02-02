@@ -1,0 +1,36 @@
+<div class="mat-elevation-z8 card m-1rem">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Login
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="m-1rem">
+            <div [formGroup]="loginForm" id="loginForm">
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>User Name</mat-label>
+                        <input type="text" matInput formControlName="username">
+                        <mat-icon matSuffix>person</mat-icon> 
+                        @if (loginForm.get('username')?.invalid) {
+                            <mat-error>User name is required!</mat-error>
+                        }                       
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password">
+                        <mat-icon matSuffix>password</mat-icon> 
+                        @if (loginForm.get('password')?.invalid) {
+                            <mat-error>Password name is required!</mat-error>
+                        }                       
+                    </mat-form-field>
+                </p>
+            </div>
+            <mat-card-actions class="card-actions">
+                <button type="button" mat-raised-button color="primary" (click)="login()" [disabled]="loginForm.invalid">Login</button>                
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</div>
