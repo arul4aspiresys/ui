@@ -26,7 +26,7 @@
       this.store.select(selectAuthUser).subscribe(user => {
         this.isLoggedIn = !!user?.token;
         if(this.isLoggedIn) {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/products/list');
         }
       });
     }

@@ -16,7 +16,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { AuthEffects } from './core/state/auth/auth.effects';
 import { authReducer } from './core/state/auth/auth.reducer';
-import { ProductsListComponent } from './core/components/products-list/products-list.component';
 import { HttpErrorInterceptorService } from './core/services/http-error-interceptor.service';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { HttpErrorInterceptorService } from './core/services/http-error-intercep
     NavToolBarComponent,
     MenuItemComponent,
     LoginComponent,
-    ProductsListComponent,
   ],
   imports: [
     BrowserModule,
