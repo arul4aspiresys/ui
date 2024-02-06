@@ -12,11 +12,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './core/components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { AuthEffects } from './core/state/auth/auth.effects';
-import { authReducer } from './core/state/auth/auth.reducer';
+import { EffectsModule, StoreModule, AuthEffects, authReducer } from 'store-lib';
 import { HttpErrorInterceptorService } from './core/services/http-error-interceptor.service';
+import { SharedServicesModule } from 'shared-services';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,9 +35,10 @@ import { HttpErrorInterceptorService } from './core/services/http-error-intercep
       permissionsIsolate: true,
       rolesIsolate: true,
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot({auth: authReducer}),
+    SharedServicesModule.forRoot({ apiUrl: environment.apiURL }),
   ],
   providers: [
     {

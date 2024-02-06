@@ -1,10 +1,9 @@
   import { Component, Input, OnInit } from '@angular/core';
   import { NavService } from '../../services/nav.service';
-  import { Store } from '@ngrx/store';
-  import { selectAuthUser } from '../../state/auth/auth.selector';
+  import { Store } from 'store-lib';
+  import { logout, selectAuthUser } from 'store-lib';
   import { Router } from '@angular/router';
-  import * as AuthActions from '../../state/auth/auth.actions';
-
+  
   @Component({
     selector: 'app-nav-tool-bar',
     templateUrl: './nav-tool-bar.component.html',
@@ -36,7 +35,7 @@
     }
 
     logout() {
-      this.store.dispatch(AuthActions.logout());
+      this.store.dispatch(logout());
       this.router.navigateByUrl('/login');
     }
   }

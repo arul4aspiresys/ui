@@ -4,8 +4,8 @@ import { NgxPermissionsService } from 'ngx-permissions';
 import { menuConfig } from './config/menu.config';
 import { environment } from '../environments/environment';
 import { NavService } from './core/services/nav.service';
-import { Store } from '@ngrx/store';
-import { selectAuthUser } from './core/state/auth/auth.selector';
+import { Store } from 'store-lib';
+import { selectAuthUser } from 'store-lib';
 
 @Component({
   selector: 'app-root',

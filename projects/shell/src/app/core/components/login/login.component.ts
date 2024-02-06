@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import * as AuthActions from '../../state/auth/auth.actions';
-import { selectAuthUser } from '../../state/auth/auth.selector';
+import { Store } from 'store-lib';
+import { login, selectAuthUser } from 'store-lib';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit{
   }
 
   login() {
-    this.store.dispatch(AuthActions.login({...this.loginForm.value}));
+    this.store.dispatch(login({...this.loginForm.value}));
   }
 
   check() {

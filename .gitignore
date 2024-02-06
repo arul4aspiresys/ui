@@ -43,3 +43,4 @@ Thumbs.db
 
 # node_modules in Library
 /projects/shared-services/node_modules
+/projects/store-lib/node_modules
