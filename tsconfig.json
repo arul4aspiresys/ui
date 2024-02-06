@@ -1,13 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "auth": [
-        "./dist/auth"
-      ],
-      "store-lib": [
-        "./dist/store-lib"
-      ]
+    "paths": {      
+      "shared-services": [
+        "./projects/shared-services/src/public-api.ts"
+      ],      
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

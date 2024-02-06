@@ -1,0 +1,13 @@
+{
+  "name": "shared-services",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0"
+  },
+  "dependencies": {
+    "ngx-toastr": "^18.0.0",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
