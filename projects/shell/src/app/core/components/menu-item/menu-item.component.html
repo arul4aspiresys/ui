@@ -1,8 +1,7 @@
 <div *ngIf="_item.permissions">
     <div *ngxPermissionsOnly="_item.permissions">
         <a mat-list-item class="app-menu-list-item" [ngStyle]="{'padding-left': (_depth * 12) + 'px'}"
-            (click)="onItemClick(_item)"
-            [ngClass]="{ 'active': _item.route ? isActiveRoute(_item): false, 'expanded': expanded }">
+            (click)="onItemClick(_item)">
             <div class="flex">
                 <mat-icon class="route-icon">{{_item.iconName}}</mat-icon>
                 <span>{{_item.title}}</span>
@@ -17,8 +16,7 @@
 <!-- When item has no permission -->
 <div *ngIf="!_item.permissions">
     <a mat-list-item class="app-menu-list-item" [ngStyle]="{'padding-left': (_depth * 12) + 'px'}"
-        (click)="onItemClick(_item)"
-        [ngClass]="{ 'active': _item.route ? isActiveRoute(_item): false, 'expanded': expanded }">
+        (click)="onItemClick(_item)">
         <div class="flex">
             <mat-icon class="route-icon">{{_item.iconName}}</mat-icon>
             <span>{{_item.title}}</span>

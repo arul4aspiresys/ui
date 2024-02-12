@@ -10,6 +10,7 @@ export const menuConfig: NavItem[] = [
                 title: 'Create',
                 iconName: 'add_circle',
                 permissions: ['ADMIN'],
+                route: 'login',
             },
             {
                 title: 'List',
@@ -36,7 +37,8 @@ export const menuConfig: NavItem[] = [
             {
                 title: 'List',
                 iconName: 'list',
-                permissions: ['USER', 'ADMIN']
+                permissions: ['USER', 'ADMIN'],
+                route: 'products/list'
             }
         ]
     },

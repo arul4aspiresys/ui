@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   appName = environment.appName;
   navMenu = menuConfig;
   @ViewChild('appDrawer') appDrawer!: ElementRef;
-
+  declare user: any;
   constructor( 
     changeDetector: ChangeDetectorRef, 
     media: MediaMatcher,
@@ -32,10 +32,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    console.log(this.mobileQuery.matches);
-    this.permissionsSVC.permissions$.subscribe(p => console.log(p));
     this.store.select(selectAuthUser).subscribe(user => {      
       if (user) {        
+        this.user = user;
         this.permissionsSVC.flushPermissions();
         this.permissionsSVC.addPermission([user.role]);
       } else {        

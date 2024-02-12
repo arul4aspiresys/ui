@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from 'store-lib';
-import { login, selectAuthUser } from 'store-lib';
+import { Store, login } from 'store-lib';
 
 @Component({
   selector: 'app-login',
@@ -29,16 +28,6 @@ export class LoginComponent implements OnInit{
 
   login() {
     this.store.dispatch(login({...this.loginForm.value}));
-  }
-
-  check() {
-    this.store.select(selectAuthUser).subscribe(user => {
-      if (user) {
-        console.log('User = ', user);
-      } else {
-        console.log('User is undefined or null');
-      }
-    });
   }
   
 }

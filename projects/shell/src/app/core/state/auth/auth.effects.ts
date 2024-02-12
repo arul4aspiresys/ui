@@ -3,7 +3,7 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import * as AuthActions from './auth.actions';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from 'shared-services';
 
 @Injectable()
 export class AuthEffects {

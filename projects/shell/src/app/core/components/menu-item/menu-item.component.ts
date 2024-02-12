@@ -30,12 +30,6 @@ export class MenuItemComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    this.navSVC.currentURL$.subscribe(url => {
-      if(this._item.route && url){
-        this.expanded = url.indexOf(`/${this._item.route}`) === 0;
-        this.ariaExpanded = this.expanded
-      }
-    });
     if(this._depth === undefined) {
       this._depth = 0;
     }
@@ -44,22 +38,9 @@ export class MenuItemComponent implements OnInit{
   onItemClick(item: NavItem) {
     if((!item.children || !item.children.length) && item.route) {
       this.router.navigateByUrl(item.route);
-      this.navSVC.closeNav();
     }
     if(item.children && item.children.length) {
       this.expanded = !this.expanded;
     }
-  }
-
-  isActiveRoute(item: NavItem) {
-    if(item.route) {
-      return this.router.isActive(item.route, {
-        paths: 'exact',
-        matrixParams: 'ignored',
-        queryParams: 'ignored',
-        fragment: 'ignored'
-      });
-    }
-    return false;
   }
 }
